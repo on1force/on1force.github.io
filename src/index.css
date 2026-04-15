@@ -1,0 +1,88 @@
+@import "tailwindcss";
+
+@theme {
+    --font-syne: "Syne", sans-serif;
+    --font-grotesk: "Space Grotesk", sans-serif;
+    --font-serif: "Instrument Serif", serif;
+
+    /* Semantic Colors */
+    --color-accent: #ff4d00;
+    --color-bg-primary: #030303;
+    --color-bg-secondary: #050505;
+    --color-bg-tertiary: #0a0a0a;
+    --color-text-primary: #f2f2f2;
+}
+
+@layer base {
+    :root {
+        --bg-primary: #030303;
+        --text-primary: #f2f2f2;
+        --accent: #ff4d00;
+    }
+html,
+body {
+    background-color: var(--color-bg-primary);
+    color: var(--color-text-primary);
+    font-family: var(--font-grotesk);
+    overflow-x: hidden;
+    cursor: none;
+}
+
+a, 
+button, 
+input, 
+textarea,
+[role="button"] {
+    cursor: none !important;
+}
+
+
+    ::selection {
+        background: var(--color-accent);
+        color: #fff;
+    }
+}
+
+/* Custom Scrollbar & Utility overrides */
+::-webkit-scrollbar {
+    width: 4px;
+}
+
+::-webkit-scrollbar-track {
+    background: #050505;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #333;
+    border-radius: 2px;
+}
+
+.noise-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    opacity: 0.04;
+    z-index: 50;
+}
+
+/* For beautiful smooth glowing text */
+.glow-text {
+    text-shadow: 0 0 30px rgba(255, 77, 0, 0.4);
+}
+.glow-box {
+    box-shadow: 0 0 50px rgba(255, 77, 0, 0.15);
+}
+
+.font-syne {
+    font-family: "Syne", sans-serif;
+}
+.font-serif {
+    font-family: "Instrument Serif", serif;
+}
+.font-grotesk {
+    font-family: "Space Grotesk", sans-serif;
+}

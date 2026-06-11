@@ -20,6 +20,7 @@ interface Project {
   description: string;
   tags: string[];
   color: string;
+  link?: string;
 }
 
 export const App: React.FC = () => {
@@ -98,8 +99,22 @@ export const App: React.FC = () => {
 
               <div className="flex items-center gap-4 relative z-10">
                 <a
-                  href="#"
-                  onClick={(e) => e.preventDefault()}
+                  href={activeProject.link || "#"}
+                  target={
+                    activeProject.link && activeProject.link !== "#"
+                      ? "_blank"
+                      : undefined
+                  }
+                  rel={
+                    activeProject.link && activeProject.link !== "#"
+                      ? "noopener noreferrer"
+                      : undefined
+                  }
+                  onClick={(e) => {
+                    if (!activeProject.link || activeProject.link === "#") {
+                      e.preventDefault();
+                    }
+                  }}
                   className="flex items-center gap-3 bg-accent text-white hover:text-black font-grotesk text-xs uppercase tracking-widest font-extrabold px-6 py-4 rounded-full transition-colors"
                 >
                   <span>Launch Experience</span>

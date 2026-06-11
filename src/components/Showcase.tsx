@@ -10,6 +10,7 @@ interface Project {
   description: string;
   tags: string[];
   color: string;
+  link?: string;
 }
 
 const projects: Project[] = [
@@ -21,15 +22,17 @@ const projects: Project[] = [
     description: "My very own portfolio website that you're seeing right now.",
     tags: ["WebGL", "Audio API", "GLSL"],
     color: "#ff4d00",
+    link: "#",
   },
   {
     id: "02",
     number: "02",
-    title: "TBA",
-    type: "-",
-    description: "-",
-    tags: ["Under Construction"],
+    title: "Jeli",
+    type: "Personal Project",
+    description: "An expense tracker web app built for the new gens.",
+    tags: ["Local First", "WebRTC", "Data Hashing"],
     color: "#3b82f6",
+    link: "https://jeli.albyluck.workers.dev/",
   },
   {
     id: "03",
@@ -39,6 +42,7 @@ const projects: Project[] = [
     description: "-",
     tags: ["Under Construction"],
     color: "#10b981",
+    link: "#",
   },
 ];
 
